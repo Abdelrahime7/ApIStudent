@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kz+PDL2jEkw=",
+  "dgSpecHash": "Re0MgofNRW8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Azur Computer\\ApiStudent\\StudentApiBuisnessLayer\\StudentApiBuisnessLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Azur Computer\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Azur Computer\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.16\\microsoft.windowsdesktop.app.ref.8.0.16.nupkg.sha512",
     "C:\\Users\\Azur Computer\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.16\\microsoft.netcore.app.ref.8.0.16.nupkg.sha512",
     "C:\\Users\\Azur Computer\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.16\\microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512"
