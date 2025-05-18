@@ -1,0 +1,14 @@
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\bin\Debug\net8.0\jsconfig1.json
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\bin\Debug\net8.0\StudentApiDataAccessLayer.deps.json
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\bin\Debug\net8.0\StudentApiDataAccessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\bin\Debug\net8.0\StudentApiDataAccessLayer.pdb
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.AssemblyInfo.cs
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.sourcelink.json
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\refint\StudentApiDataAccessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\StudentApiDataAccessLayer.pdb
+C:\Users\Azur Computer\ApiStudent\StudentApiDataAccessLayer\obj\Debug\net8.0\ref\StudentApiDataAccessLayer.dll

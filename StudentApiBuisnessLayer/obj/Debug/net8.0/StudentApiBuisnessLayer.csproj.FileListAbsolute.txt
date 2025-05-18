@@ -1,0 +1,17 @@
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\bin\Debug\net8.0\jsconfig1.json
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\bin\Debug\net8.0\StudentApiBuisnessLayer.deps.json
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\bin\Debug\net8.0\StudentApiBuisnessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\bin\Debug\net8.0\StudentApiBuisnessLayer.pdb
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\bin\Debug\net8.0\StudentApiDataAccessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\bin\Debug\net8.0\StudentApiDataAccessLayer.pdb
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.csproj.AssemblyReference.cache
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.AssemblyInfoInputs.cache
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.AssemblyInfo.cs
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.sourcelink.json
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentA.B94A7867.Up2Date
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\refint\StudentApiBuisnessLayer.dll
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\StudentApiBuisnessLayer.pdb
+C:\Users\Azur Computer\ApiStudent\StudentApiBuisnessLayer\obj\Debug\net8.0\ref\StudentApiBuisnessLayer.dll
