@@ -9,7 +9,12 @@ namespace StudentApiBuisnessLayer
 
        public  static List<StudentDTO> AllStudents()
         {
-            return StudentsData.GerAllStudents();
+            return StudentsData.GetAllStudents();
+        }
+
+        public static List<StudentDTO> PassedStudents()
+        {
+            return StudentsData.GetPassedStudents();
         }
     }
 }
