@@ -92,7 +92,7 @@ namespace StudentApiDataAccessLayer
                     object result = cmd.ExecuteScalar();
                     if (result != DBNull.Value)
                     {
-                        AverageGrade =  Convert.ToDouble( result);
+                        AverageGrade =  Convert.ToDouble(result);
                     }
                     else
                         AverageGrade = 0;
@@ -101,6 +101,46 @@ namespace StudentApiDataAccessLayer
             return AverageGrade;
 
         }
+
+
+        public static StudentDTO Find(int ID)
+        {
+
+
+            using (SqlConnection con = new SqlConnection(Connection.ConnectionString()))
+
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_FindStudent", con))
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", ID);
+
+                    con.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new StudentDTO(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetString(reader.GetOrdinal("Name")),
+                                reader.GetInt32(reader.GetOrdinal("Age")),
+                                reader.GetInt32(reader.GetOrdinal("Grad"))
+
+                                );
+
+                        }
+                        else return null;
+                    }
+
+
+
+                }
+            }
+          
+        }
+
 
     }
 }

@@ -56,6 +56,21 @@ namespace StudentAPI.Controllers
         }
 
 
+        [HttpGet("{ID}", Name = "FindStudent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+
+        public ActionResult<IEnumerable<StudentDTO>> FindStudent(int ID)
+        {
+            var student = StudentBuis.find(ID);
+            if (student is null)
+            {
+                return NotFound("No Student Found");
+
+            }
+            return Ok(student);
+
+        }
 
 
 
