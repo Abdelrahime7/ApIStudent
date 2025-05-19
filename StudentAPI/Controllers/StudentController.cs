@@ -42,6 +42,19 @@ namespace StudentAPI.Controllers
 
         }
 
+        [HttpGet("Average", Name = "AverageGrad")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+
+        public ActionResult <double> AverageGrad()
+        {
+            var averageGrad = 0d;
+
+            averageGrad = StudentBuis.AverageGrad();
+           
+            return Ok(averageGrad);
+
+        }
+
 
 
 

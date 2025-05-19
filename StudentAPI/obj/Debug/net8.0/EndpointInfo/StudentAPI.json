@@ -122,6 +122,39 @@
           }
         }
       }
+    },
+    "/Api/Students/Average": {
+      "get": {
+        "tags": [
+          "Student"
+        ],
+        "operationId": "AverageGrad",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {

@@ -31,6 +31,27 @@
   },
   {
     "ContainingType": "StudentAPI.Controllers.StudentController",
+    "Method": "AverageGrad",
+    "RelativePath": "Api/Students/Average",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Double",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "AverageGrad"
+  },
+  {
+    "ContainingType": "StudentAPI.Controllers.StudentController",
     "Method": "PassedStudents",
     "RelativePath": "Api/Students/Passed",
     "HttpMethod": "GET",

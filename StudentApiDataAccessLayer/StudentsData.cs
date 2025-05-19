@@ -75,5 +75,32 @@ namespace StudentApiDataAccessLayer
 
         }
 
+
+        public static double AverageGrad()
+        {
+            var AverageGrade = 0d;
+
+            using (SqlConnection con = new SqlConnection(Connection.ConnectionString()))
+
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetAerageGrad", con))
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    con.Open();
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        AverageGrade =  Convert.ToDouble( result);
+                    }
+                    else
+                        AverageGrade = 0;
+                }
+            }
+            return AverageGrade;
+
+        }
+
     }
 }
