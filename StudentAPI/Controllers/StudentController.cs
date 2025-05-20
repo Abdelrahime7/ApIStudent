@@ -56,20 +56,55 @@ namespace StudentAPI.Controllers
         }
 
 
-        [HttpGet("{ID}", Name = "FindStudent")]
+        [HttpGet("{ID}", Name = "GetStudentByID")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
 
-        public ActionResult<IEnumerable<StudentDTO>> FindStudent(int ID)
+        public ActionResult<StudentDTO> FindStudent(int ID)
         {
+            if (ID> 1)
+            {
+                return BadRequest($"invalid {ID}");
+            }
+
+            // we retriev the whole studentBuiss here ,maybe we  need some of its method to do some logic
             var student = StudentBuis.find(ID);
+
             if (student is null)
             {
                 return NotFound("No Student Found");
-
             }
-            return Ok(student);
+            else
+            {
+                //here we just  the needed data to  client 
+                StudentDTO SDTO = student.DTO;
+                return Ok(SDTO);
+            }
+        }
 
+
+        [HttpPost(Name = "AddStudent")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<StudentDTO>  AddStudent (StudentDTO SDTO)
+        {
+            if (SDTO == null ||   string.IsNullOrEmpty(SDTO.Name)||SDTO.Grade < 0 || SDTO.Grade>100)
+            {
+                return BadRequest($"invalid Student Data ");
+            }
+
+
+            StudentBuis student = new StudentBuis(SDTO);
+            student.Save();
+
+            SDTO.Id = student.Id;
+
+            return CreatedAtRoute($"GetStudentByID", new { Id = SDTO.Id }, SDTO);
+               
+
+          
+           
         }
 
 

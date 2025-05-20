@@ -1,23 +1,24 @@
 ﻿
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography.Pkcs;
 
 namespace StudentApiDataAccessLayer
 {
- 
+
     public static class StudentsData
     {
 
-       
 
-       public static List<StudentDTO>GetAllStudents()
+
+        public static List<StudentDTO> GetAllStudents()
         {
             var studentsList = new List<StudentDTO>();
 
             using (SqlConnection con = new SqlConnection(Connection.ConnectionString()))
 
             {
-                using (SqlCommand cmd = new SqlCommand("SP_GetAllStudents",con))
+                using (SqlCommand cmd = new SqlCommand("SP_GetAllStudents", con))
                 {
 
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -37,9 +38,9 @@ namespace StudentApiDataAccessLayer
                         }
                     }
                 }
-             }
-                return studentsList;
-           
+            }
+            return studentsList;
+
         }
 
 
@@ -92,7 +93,7 @@ namespace StudentApiDataAccessLayer
                     object result = cmd.ExecuteScalar();
                     if (result != DBNull.Value)
                     {
-                        AverageGrade =  Convert.ToDouble(result);
+                        AverageGrade = Convert.ToDouble(result);
                     }
                     else
                         AverageGrade = 0;
@@ -138,9 +139,43 @@ namespace StudentApiDataAccessLayer
 
                 }
             }
-          
+
         }
 
 
+        public static int AddStudent(StudentDTO SDTO)
+        {
+
+
+            using (SqlConnection con = new SqlConnection(Connection.ConnectionString()))
+
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_AddStudent", con))
+
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Name",SDTO.Name);
+                    cmd.Parameters.AddWithValue("@Age", SDTO.Age);
+                    cmd.Parameters.AddWithValue("@Grad", SDTO.Grade);
+                    var OutIdParameter = new SqlParameter("@ID", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output,
+                    };
+                    cmd.Parameters.Add(OutIdParameter);
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    return (int) OutIdParameter.Value;
+
+
+
+
+                }
+
+            }
+        }
     }
 }

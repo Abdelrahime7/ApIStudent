@@ -1,4 +1,5 @@
 ﻿using StudentApiDataAccessLayer;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
 
@@ -6,7 +7,7 @@ namespace StudentApiBuisnessLayer
 {
     public class StudentBuis
     {
-
+        public StudentDTO DTO { get {return new(this.Id, this.Name, this.Age, this.Grad); } }
 
         public enum Mode
         { ADD=1,Update=2
@@ -17,18 +18,52 @@ namespace StudentApiBuisnessLayer
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int Age { get; set; }
-        public int Grade { get; set; }
+        public int Grad { get; set; }
 
-        public StudentBuis(StudentDTO student,Mode mode)
+        public StudentBuis(StudentDTO student,Mode mode = Mode.ADD)
         {
             this.Id = student.Id;
             this.Name =student. Name;
             this.Age = student.Age;
-            this.Grade = student. Grade;
+            this.Grad = student. Grade;
 
             this.mode = mode;
         }
+         
+       public bool AddStudent()
+        {
+         
+              var id  =StudentsData.AddStudent(DTO);
+            return id>0;
+        }
 
+
+        public bool Save()
+        {
+            switch (mode)
+            {
+
+                case Mode.ADD:
+
+
+                   if (AddStudent())
+                   {
+                       mode = Mode.Update;
+                       return true;
+                   }
+                    else
+                    {
+                        return false;
+                    }
+                case Mode.Update:
+                       return false;
+
+
+
+            }
+            return false;
+        }
+        
 
 
 
@@ -48,16 +83,18 @@ namespace StudentApiBuisnessLayer
         }
 
 
-        public static StudentDTO find(int ID)
+        public static StudentBuis find(int ID)
         {
-            if (StudentsData.Find(ID) != null)
 
+            var studentDto = StudentsData.Find(ID);
+            if (studentDto !=null)
             {
-                var studentDto = StudentsData.Find(ID);
-                StudentBuis buis = new StudentBuis(studentDto, Mode.Update);
-                return studentDto;
+                return new StudentBuis(studentDto, Mode.Update); 
             }
-            else return null;
+
+
+            else
+                return null;
         }
 
 
