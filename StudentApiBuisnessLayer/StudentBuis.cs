@@ -33,8 +33,13 @@ namespace StudentApiBuisnessLayer
        public bool AddStudent()
         {
          
-              var id  =StudentsData.AddStudent(DTO);
-            return id>0;
+            var NewStudentID  =StudentsData.AddStudent(DTO);
+            return NewStudentID > 0;
+        }
+        public bool UpdateStudent()
+        {
+            return StudentsData.UpdateStudent(DTO);
+           
         }
 
 
@@ -56,10 +61,17 @@ namespace StudentApiBuisnessLayer
                         return false;
                     }
                 case Mode.Update:
-                       return false;
 
-
-
+                    if (UpdateStudent())
+                    {
+                        mode = Mode.ADD;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                    
             }
             return false;
         }
@@ -83,7 +95,7 @@ namespace StudentApiBuisnessLayer
         }
 
 
-        public static StudentBuis find(int ID)
+        public static StudentBuis? find(int ID)
         {
 
             var studentDto = StudentsData.Find(ID);

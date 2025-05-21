@@ -171,7 +171,35 @@ namespace StudentApiDataAccessLayer
                     return (int) OutIdParameter.Value;
 
 
+                }
 
+            }
+        }
+
+        public static bool UpdateStudent(StudentDTO SDTO )
+        {
+
+
+            using (SqlConnection con = new SqlConnection(Connection.ConnectionString()))
+
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_UpdateStudent", con))
+
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ID", SDTO.Id);
+                    cmd.Parameters.AddWithValue("@Name", SDTO.Name);
+                    cmd.Parameters.AddWithValue("@Age", SDTO.Age);
+                    cmd.Parameters.AddWithValue("@Grad", SDTO.Grade);
+                    
+                  
+
+                    con.Open();
+
+                    cmd.ExecuteNonQuery();
+                    return true;
 
                 }
 

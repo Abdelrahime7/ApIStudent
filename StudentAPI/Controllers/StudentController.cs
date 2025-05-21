@@ -96,15 +96,46 @@ namespace StudentAPI.Controllers
 
 
             StudentBuis student = new StudentBuis(SDTO);
-            student.Save();
+            SDTO.Id= student.Save() ? student.Id : 0 ;
 
-            SDTO.Id = student.Id;
 
-            return CreatedAtRoute($"GetStudentByID", new { Id = SDTO.Id }, SDTO);
-               
+            if (SDTO.Id!=0)
+            {
+                return CreatedAtRoute($"GetStudentByID", new { Id = SDTO.Id }, SDTO);
+            }
+            else
+                return BadRequest($"Saving Failed  :( ");
 
-          
+        }
+        [HttpPut("{ID}",Name = "UdateStudent")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<StudentDTO> UbdateStudent(int ID, StudentDTO SDTO)
+        {
+            if (SDTO == null || string.IsNullOrEmpty(SDTO.Name) || SDTO.Grade < 0 || SDTO.Grade > 100)
+            {
+                return BadRequest($"invalid Student Data ");
+            }
+
+
+            StudentBuis ? student = StudentBuis.find(ID);
+
            
+
+            if (student !=null)
+            {
+                student.Name = SDTO.Name;
+                student.Age=SDTO.Age;
+                student.Grad = SDTO.Grade;
+
+                if (student.Save())
+                {
+                    return Ok($"Student with ID = {ID} Updated Successfully ");
+                }
+                
+            }
+            return BadRequest($"invalid Student Data ");
+
         }
 
 

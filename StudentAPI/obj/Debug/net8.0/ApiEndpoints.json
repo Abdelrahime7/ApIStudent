@@ -82,6 +82,47 @@
   },
   {
     "ContainingType": "StudentAPI.Controllers.StudentController",
+    "Method": "UbdateStudent",
+    "RelativePath": "Api/Students/{ID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "SDTO",
+        "Type": "StudentApiDataAccessLayer.StudentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "StudentApiDataAccessLayer.StudentDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "UdateStudent"
+  },
+  {
+    "ContainingType": "StudentAPI.Controllers.StudentController",
     "Method": "AllStudents",
     "RelativePath": "Api/Students/All",
     "HttpMethod": "GET",
