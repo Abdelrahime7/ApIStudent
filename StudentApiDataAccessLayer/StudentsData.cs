@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Data.SqlClient;
 using System.Data;
+using System.Linq.Expressions;
 using System.Security.Cryptography.Pkcs;
 
 namespace StudentApiDataAccessLayer
@@ -205,5 +206,32 @@ namespace StudentApiDataAccessLayer
 
             }
         }
+
+        public static bool DeleteStudent(int ID)
+        {
+
+
+            using (SqlConnection con = new SqlConnection(Connection.ConnectionString()))
+
+                using (var cmd = new SqlCommand("SP_DeleteStudent", con))
+
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ID",ID);
+                   
+                    con.Open();
+                    
+                    int RowsEfected= (int)cmd.ExecuteScalar();
+
+                    return  RowsEfected==1;
+                
+                }
+
+            
+        }
+
     }
+
 }

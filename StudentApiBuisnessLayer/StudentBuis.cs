@@ -109,6 +109,10 @@ namespace StudentApiBuisnessLayer
                 return null;
         }
 
+        public static bool DeletStudent(int ID)
+        {
+            return StudentsData.DeleteStudent(ID);
+        }
 
     }
 }

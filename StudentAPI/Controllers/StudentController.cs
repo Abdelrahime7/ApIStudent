@@ -139,6 +139,32 @@ namespace StudentAPI.Controllers
         }
 
 
+        [HttpDelete("{ID}", Name = "DeleteStudent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult  DeletStudent(int ID)
+        {
+
+            if (ID < 1)
+            {
+                return BadRequest("Invalid ID");
+            }
+            StudentBuis? student = StudentBuis.find(ID);
+
+            if (student != null)
+            {
+                
+                if (StudentBuis.DeletStudent(ID))
+                {
+                    return Ok($"Student with ID = {ID} Deleted Successfully ");
+                }
+
+            }
+            return BadRequest($" there is NO Student with ID = {ID} ");
+
+        }
+
+
 
     }
 }

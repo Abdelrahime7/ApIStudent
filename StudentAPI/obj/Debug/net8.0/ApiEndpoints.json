@@ -123,6 +123,38 @@
   },
   {
     "ContainingType": "StudentAPI.Controllers.StudentController",
+    "Method": "DeletStudent",
+    "RelativePath": "Api/Students/{ID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "DeleteStudent"
+  },
+  {
+    "ContainingType": "StudentAPI.Controllers.StudentController",
     "Method": "AllStudents",
     "RelativePath": "Api/Students/All",
     "HttpMethod": "GET",
